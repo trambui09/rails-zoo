@@ -1,0 +1,18 @@
+<!--# rails forms-->
+
+<%= form_with model: @animal do |f| %>
+  <p> Please enter the information for the new animal: </p>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :species %>
+    <%= f.text_field :species %>
+  </div>
+  <div>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+  <%= f.submit "Add an animal" %>
+<% end %>
