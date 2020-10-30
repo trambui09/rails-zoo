@@ -1,0 +1,12 @@
+<h1>Animals</h1>
+<ul>
+  <% if @animals.length > 1 %>
+    <% @animals.each do |animal| %>
+      <li>
+        <%= link_to animal.name, animal_path(animal) %> is a <%= animal.species %> who is <%= animal.age %> year(s) old.
+      </li>
+    <% end %>
+  <% else %>
+    <p>No animals in list</p>
+  <% end %>
+</ul>

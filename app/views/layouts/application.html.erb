@@ -8,8 +8,28 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <button><a href="/">Home</a></button>
+          </li>
+          <li>
+            <button><%= link_to "All Animals", animals_path %></button>
+          </li>
+        </ul>
+<!--        <button>Home</button>-->
+      </nav>
+
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p>Copyrighted: All rights reserved</p>
+    </footer>
   </body>
 </html>
