@@ -4,6 +4,8 @@
     <% @animals.each do |animal| %>
       <li>
         <%= link_to animal.name, animal_path(animal) %> is a <%= animal.species %> who is <%= animal.age %> year(s) old.
+        <%= link_to "Edit", edit_animal_path(animal) %>
+        <%= link_to "Delete", animal_path(animal), method: :delete, data: {confirm: "Are you sure?"} %>
       </li>
     <% end %>
   <% else %>

@@ -16,3 +16,21 @@
 @import "bootstrap";
 
 @import "**/*";
+
+body {
+    display: flex;
+    flex-direction: columns;
+}
+
+header ul li a {
+    text-decoration: none;
+}
+
+
+header ul li button {
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+}

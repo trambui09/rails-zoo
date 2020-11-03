@@ -1,0 +1,19 @@
+<%= form_with model: @animal do |f| %>
+<!--  is there a new to make the p tags customizable? -->
+<!--  comment testing-->
+  <p> Edit an animal's information: </p>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :species %>
+    <%= f.text_field :species %>
+  </div>
+  <div>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+  <%= f.submit "#{action_name} animal" %>
+
+<% end %>

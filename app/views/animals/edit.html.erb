@@ -1,9 +1,7 @@
-<%= render partial: "form", locals:  {action_name: "New"} %>
-
-<!--# rails forms-->
+<%= render partial: "form", locals:  {action_name: "Edit"} %>
 
 <%#= form_with model: @animal do |f| %>
-<!--  <p> Please enter the information for the new animal: </p>-->
+<!--  <p> Edit an animal's information: </p>-->
 <!--  <div>-->
     <%#= f.label :name %>
     <%#= f.text_field :name %>
@@ -16,5 +14,6 @@
     <%#= f.label :age %>
     <%#= f.text_field :age %>
 <!--  </div>-->
-  <%#= f.submit "Add an animal" %>
+  <%#= f.submit "Edit an animal" %>
+
 <%# end %>

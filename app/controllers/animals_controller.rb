@@ -38,6 +38,46 @@ class AnimalsController < ApplicationController
 
   end
 
+  # will find the animal to edit
+  def edit
+    @animal = Animal.find_by(id: params[:id])
+
+    if @animal.nil?
+      redirect_to animals_path
+    end
+
+  end
+
+  def update
+    @animal = Animal.find_by(id: params[:id])
+
+    if @animal.nil?
+      redirect_to animals_path
+    elsif @animal.update(animal_params)
+      redirect_to animals_path
+      return
+    else
+      # still don't know what the render is doing or why we need it
+      # render is different from redirect_to because it doesn't go through another HTTP request cycle. it shows the view page as is
+      render :edit
+      return
+    end
+
+  end
+
+  def destroy
+    # should use local variable because we're not using it in our delete view
+    @animal = Animal.find_by(id: params[:id])
+
+    if @animal.nil?
+      head :not_found
+      return
+    else
+      @animal.destroy
+      redirect_to animals_path
+    end
+  end
+
   private
 
   def animal_params
